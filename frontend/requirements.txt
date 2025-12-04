@@ -1,0 +1,7 @@
+streamlit
+audio-recorder-streamlit
+python-dotenv
+requests
+pillow
+numpy
+pandas

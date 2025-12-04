@@ -1,0 +1,52 @@
+fastapi
+uvicorn
+pymongo
+python-dotenv
+requests
+httpx
+pydantic
+pydantic_core
+
+# AI + NLP + LLM Tools
+langchain
+langchain-core
+langchain-openai
+langgraph
+langgraph-sdk
+langgraph-prebuilt
+langdetect
+deepmultilingualpunctuation
+openai
+tiktoken
+
+# Audio Processing + Separation + TTS
+torchaudio
+torch
+demucs
+gTTS
+pydub
+
+# OCR / Computer Vision
+paddleocr
+paddlepaddle
+pytesseract
+opencv-python-headless
+pdfminer.six
+pdfplumber
+PyMuPDF
+pdf2docx
+
+# Image + Video Processing
+moviepy
+imageio
+imageio-ffmpeg
+scikit-image
+
+# Utilities
+numpy
+pandas
+python-multipart
+Pillow
+regex
+rapidfuzz
+loguru
