@@ -1,0 +1,15 @@
+{
+  "input": "",
+  "source_lang": "unknown",
+  "target_lang": "en",
+  "translated_text": "Translate the following text to English while preserving the emotions of the story, the theme of friendship, the moral message, the dramatic flow, and ensuring it is suitable for children. Do not summarize or shorten.",
+  "summary": "",
+  "moderation": {
+    "is_safe": true,
+    "category": "safe",
+    "reason": "No harmful content detected",
+    "flagged_word": null
+  },
+  "audio": "static/audio\\en_20251122_175346_22f48793_Translate the following text t.mp3",
+  "type": "workflow"
+}

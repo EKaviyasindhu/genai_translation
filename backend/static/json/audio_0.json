@@ -1,0 +1,21 @@
+{
+  "input_file": "C:\\Users\\HP\\AppData\\Local\\Temp\\mic_1764663218.wav",
+  "transcribed_text": "Hi, I am Pradeepthi. Hi, I am Pradeepthi. My sister name is Pratadi. I am studying third standard.",
+  "detected_lang": "en",
+  "target_lang": "ta",
+  "analysis": {
+    "domain": "education",
+    "tone": "neutral",
+    "confidence": 0.46606433391571045
+  },
+  "whisper": "openai",
+  "stt_model": "openai",
+  "audio_duration_sec": 10.154667,
+  "transcription_cost_usd": 0.0,
+  "same_language": false,
+  "audio_source": "static/audio\\en_20251202_191356_c8bf1ee5_Hi, I am.mp3",
+  "translated_text": "வணக்கம், நான் பிரதீப்தி. என் சகோதரி பெயர் பிரதாதி. நான் மூன்றாம் வகுப்பில் படிக்கிறேன்.",
+  "translated_audio": "static/audio\\ta_20251202_191358_a5ed77be_வணக்கம்,.mp3",
+  "tts_cost_usd": 0.001654,
+  "total_cost_usd": 0.001654
+}

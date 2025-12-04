@@ -1,0 +1,16 @@
+{
+  "input_file": "C:\\Users\\HP\\AppData\\Local\\Temp\\images2.jpg",
+  "ocr_engine": "PaddleOCR-en",
+  "detected_lang": "en",
+  "source_text": "About Technical Descriptions eve definifon of a word or phrase ie.whatis x buts ten A technic description aimost aiways starts with c sentence not about what x means. ncrrowfy focused to explcin how x works or whgt x is Eke cnd How does it work? What is it like?",
+  "target_lang": "ta",
+  "analysis": {
+    "domain": "general",
+    "tone": "neutral",
+    "confidence": 0.3019457161426544
+  },
+  "translated_text": "தொழில்நுட்ப விளக்கங்கள் என்பது ஒரு சொல் அல்லது சொற்றொடரின் வரையறையைப் பற்றியது. இது பொதுவாக, 'x' என்றால் என்ன என்பதைக் கூறுவதற்குப் பதிலாக, 'x' எப்படி செயல்படுகிறது அல்லது 'x' என்ன என்பதை விளக்குவதற்கான ஒரு வாக்கியத்துடன் தொடங்குகிறது. 'x' எப்படி செயல்படுகிறது? அது எப்படி இருக்கிறது?",
+  "audio_target": "static/audio\\ta_20251127_121742_2d8ca5e5_தொழில்நு.mp3",
+  "tts_cost_usd": 0.00284,
+  "total_cost_usd": 0.00284
+}

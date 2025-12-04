@@ -1,0 +1,18 @@
+{
+  "input": "hi   i am m .pradipti   me   and  my  sister  like  black pink",
+  "cleaned": "hi i am m .pradipti me and my sister like black pink",
+  "detected_lang": "en",
+  "target_lang": "ta",
+  "analysis": {
+    "domain": "news",
+    "tone": "neutral",
+    "confidence": 0.32923656702041626
+  },
+  "same_language": false,
+  "source_text": "hi i am m .pradipti me and my sister like black pink",
+  "audio_source": "static/audio\\en_20251202_190936_428ada43_hi i am .mp3",
+  "translated_text": "வணக்கம், நான் எம். பிரதிப்தி. நான் மற்றும் என் சகோதரி பிளாக் பிங்கை விரும்புகிறோம்.",
+  "audio_target": "static/audio\\ta_20251202_190939_3465b2ad_வணக்கம்,.mp3",
+  "tts_cost_usd": 0.001246,
+  "total_cost_usd": 0.001246
+}

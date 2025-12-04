@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./genai_translation/backend
+      dockerfile: Dockerfile
+    container_name: translation-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=${MONGO_URI}
+    restart: always
+
+  frontend:
+    build:
+      context: ./genai_translation/frontend
+      dockerfile: Dockerfile
+    container_name: translation-frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    restart: always

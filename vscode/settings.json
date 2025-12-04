@@ -1,0 +1,8 @@
+{
+  "python.defaultInterpreterPath": "E:/HOPEAI/PJT/genai_translation/venv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "E:/HOPEAI/PJT/genai_translation/venv/Lib/site-packages"
+  ],
+  "python.analysis.indexing": true,
+  "python.analysis.autoSearchPaths": true
+}
