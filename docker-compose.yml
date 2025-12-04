@@ -3,7 +3,7 @@ version: "3.9"
 services:
   backend:
     build:
-      context: ./genai_translation/backend
+      context: ./backend
       dockerfile: Dockerfile
     container_name: translation-backend
     ports:
@@ -14,7 +14,7 @@ services:
 
   frontend:
     build:
-      context: ./genai_translation/frontend
+      context: ./frontend
       dockerfile: Dockerfile
     container_name: translation-frontend
     ports:
