@@ -17,10 +17,12 @@ deepmultilingualpunctuation
 openai
 tiktoken
 
+# CPU Torch Index (must be before torch)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 # Audio Processing + Separation + TTS
 torch==2.0.1+cpu
 torchaudio==2.0.2+cpu
---extra-index-url https://download.pytorch.org/whl/cpu
 demucs==4.0.0
 gTTS
 pydub
