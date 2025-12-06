@@ -15,21 +15,21 @@ jobs:
       - name: Copy files to EC2 via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.AWS_HOST }}
-          username: ubuntu
-          key: ${{ secrets.AWS_SSH_KEY }}
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           source: "."
           target: "/home/ubuntu/genai_translation"
 
-      - name: Connect to EC2 and Deploy Containers
+      - name: Connect and Deploy
         uses: appleboy/ssh-action@v0.1.6
         with:
-          host: ${{ secrets.AWS_HOST }}
-          username: ubuntu
-          key: ${{ secrets.AWS_SSH_KEY }}
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu/genai_translation
-            docker compose down
+            docker compose down || true
             docker compose build --no-cache
             docker compose up -d
             docker image prune -f
