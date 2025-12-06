@@ -42,7 +42,7 @@ paddleocr==2.7.0.3
 pytesseract==0.3.13
 pdfminer.six==20231228
 pdfplumber==0.11.8
-PyMuPDF==1.23.8
+PyMuPDF==1.20.2
 pdf2docx==0.5.8
 
 # --- Image / Video Processing ---
