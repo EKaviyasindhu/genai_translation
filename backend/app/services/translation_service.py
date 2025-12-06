@@ -4,6 +4,7 @@ load_dotenv()
 from openai import OpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
+import torch
 
 OPENAI_KEY = os.getenv('OPENAI_API_KEY', '')
 

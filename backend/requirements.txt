@@ -20,10 +20,12 @@ tiktoken==0.12.0
 # --- Language Detection / Punctuation ---
 langdetect==1.0.9
 lingua-language-detector==2.1.1
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 deepmultilingualpunctuation==1.0.1
 
 # --- Audio & AI Models ---
---extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.1.0+cpu
 torchaudio==2.1.0+cpu
 demucs==4.0.1

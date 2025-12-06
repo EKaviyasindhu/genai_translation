@@ -19,7 +19,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.AWS_SSH_KEY }}
           source: "."
-          target: "/home/ubuntu/app"
+          target: "/home/ubuntu/genai_translation"
 
       - name: Connect to EC2 and Deploy Containers
         uses: appleboy/ssh-action@v0.1.6
@@ -28,7 +28,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
-            cd /home/ubuntu/app
+            cd /home/ubuntu/genai_translation
             docker compose down
             docker compose build --no-cache
             docker compose up -d
