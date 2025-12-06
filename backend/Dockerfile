@@ -13,16 +13,23 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Install CPU-based PyTorch BEFORE requirements (important!)
-RUN pip install --no-cache-dir torch==2.1.0+cpu torchvision==0.16.0+cpu torchaudio==2.1.0+cpu \
+# 1️⃣ Install correct NumPy BEFORE Torch & other packages
+RUN pip install --no-cache-dir numpy==1.23.5
+
+# 2️⃣ Install CPU Torch (compatible with numpy 1.x)
+RUN pip install --no-cache-dir \
+    torch==2.1.0+cpu \
+    torchvision==0.16.0+cpu \
+    torchaudio==2.1.0+cpu \
     -f https://download.pytorch.org/whl/cpu/torch_stable.html
 
-# Copy requirements first (for caching efficiency)
+# 3️⃣ Copy and install backend requirements
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt \
+    --extra-index-url https://download.pytorch.org/whl/cpu
 
-# Copy entire backend code
+# 4️⃣ Copy backend source code
 COPY . .
 
 EXPOSE 8000

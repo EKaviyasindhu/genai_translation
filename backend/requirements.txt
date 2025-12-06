@@ -35,13 +35,14 @@ gTTS==2.5.4
 pydub==0.25.1
 
 # --- OCR / PDF Processing ---
+numpy==1.23.5
+opencv-python-headless==4.6.0.66
 paddlepaddle==2.6.2
 paddleocr==2.7.0.3
 pytesseract==0.3.13
-opencv-python-headless==4.12.0.88
-pdfminer.six==20251107
+pdfminer.six==20231228
 pdfplumber==0.11.8
-PyMuPDF==1.20.2
+PyMuPDF==1.23.8
 pdf2docx==0.5.8
 
 # --- Image / Video Processing ---
@@ -51,16 +52,14 @@ imageio-ffmpeg==0.6.0
 scikit-image==0.25.2
 
 # --- Transformers Stack ---
-transformers==4.40.2
-huggingface-hub==0.36.0
+transformers==4.35.2
+huggingface-hub==0.20.3
 safetensors==0.6.2
 
 # --- Utils ---
-numpy==2.2.0
 pandas==2.3.3
 python-multipart==0.0.20
 Pillow==11.3.0
 regex==2025.11.3
 rapidfuzz==3.14.3
 loguru==0.7.3
-
