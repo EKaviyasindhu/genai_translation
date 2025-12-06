@@ -1,53 +1,62 @@
-fastapi
-uvicorn
-pymongo
-python-dotenv
-requests
-httpx
-pydantic
-pydantic_core
+fastapi==0.121.2
+uvicorn==0.38.0
+pymongo==4.15.4
+python-dotenv==1.2.1
+requests==2.32.5
+httpx==0.28.1
+pydantic==2.12.4
+pydantic_core==2.41.5
 
-# AI + NLP + LLM Tools
+# --- LLM / LangGraph Stack ---
 langchain==1.0.7
+langchain-core==1.0.5
+langchain-openai==1.0.3
 langgraph==1.0.3
 langgraph-sdk==0.2.9
 langgraph-prebuilt==1.0.4
-langdetect
-deepmultilingualpunctuation
-openai
-tiktoken
+langsmith==0.4.43
+tiktoken==0.12.0
 
-# CPU Torch Index (must be before torch)
+# --- Language Detection / Punctuation ---
+langdetect==1.0.9
+lingua-language-detector==2.1.1
+deepmultilingualpunctuation==1.0.1
+
+# --- Audio & AI Models ---
 --extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0+cpu
+torchaudio==2.1.0+cpu
+demucs==4.0.1
+gTTS==2.5.4
+pydub==0.25.1
 
-# Audio Processing + Separation + TTS
-torch==2.0.1+cpu
-torchaudio==2.0.2+cpu
-demucs==4.0.0
-gTTS
-pydub
+# --- OCR / PDF Processing ---
+paddlepaddle==2.5.2
+paddleocr==2.7.0.3
+pytesseract==0.3.13
+opencv-python-headless==4.12.0.88
+pdfminer.six==20251107
+pdfplumber==0.11.8
+PyMuPDF==1.20.2
+pdf2docx==0.5.8
 
-# OCR / Computer Vision
-paddlepaddle==2.6.2
-paddleocr==2.7.0
-pytesseract
-opencv-python-headless==4.8.0.74
-pdfminer.six
-pdfplumber
-PyMuPDF
-pdf2docx
+# --- Image / Video Processing ---
+moviepy==2.2.1
+imageio==2.37.2
+imageio-ffmpeg==0.6.0
+scikit-image==0.25.2
 
-# Image + Video Processing
-moviepy
-imageio
-imageio-ffmpeg
-scikit-image
+# --- Transformers Stack ---
+transformers==4.57.1
+huggingface-hub==0.36.0
+safetensors==0.6.2
 
-# Utilities
-numpy
-pandas
-python-multipart
-Pillow
-regex
-rapidfuzz
-loguru
+# --- Utils ---
+numpy==1.23.5
+pandas==2.3.3
+python-multipart==0.0.20
+Pillow==11.3.0
+regex==2025.11.3
+rapidfuzz==3.14.3
+loguru==0.7.3
+
