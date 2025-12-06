@@ -8,9 +8,7 @@ pydantic
 pydantic_core
 
 # AI + NLP + LLM Tools
-langchain
-langchain-core
-langchain-openai
+langchain==0.0.352
 langgraph
 langgraph-sdk
 langgraph-prebuilt
@@ -20,17 +18,18 @@ openai
 tiktoken
 
 # Audio Processing + Separation + TTS
-torchaudio
-torch
-demucs
+torch==2.0.1+cpu
+torchaudio==2.0.2+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+demucs==4.0.0
 gTTS
 pydub
 
 # OCR / Computer Vision
-paddleocr
-paddlepaddle
+paddlepaddle==2.6.1
+paddleocr==2.7.0
 pytesseract
-opencv-python-headless
+opencv-python-headless==4.8.0.74
 pdfminer.six
 pdfplumber
 PyMuPDF
