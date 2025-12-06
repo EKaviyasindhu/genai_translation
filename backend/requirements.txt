@@ -8,10 +8,10 @@ pydantic
 pydantic_core
 
 # AI + NLP + LLM Tools
-langchain==0.0.352
-langgraph==0.0.38
-langgraph-sdk==0.2.14
-langgraph-prebuilt==1.0.5
+langchain==0.1.14
+langgraph==0.0.53
+langgraph-sdk==0.1.70
+langgraph-prebuilt==0.0.74
 langdetect
 deepmultilingualpunctuation
 openai
