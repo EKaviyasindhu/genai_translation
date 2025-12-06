@@ -11,7 +11,7 @@ pydantic_core
 langchain==0.1.14
 langgraph==0.0.53
 langgraph-sdk==0.1.70
-langgraph-prebuilt==0.0.74
+langgraph-prebuilt==1.0.5
 langdetect
 deepmultilingualpunctuation
 openai
