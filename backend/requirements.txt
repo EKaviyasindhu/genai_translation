@@ -26,7 +26,7 @@ gTTS
 pydub
 
 # OCR / Computer Vision
-paddlepaddle==2.6.1
+paddlepaddle==2.6.2
 paddleocr==2.7.0
 pytesseract
 opencv-python-headless==4.8.0.74
