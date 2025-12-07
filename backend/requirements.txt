@@ -35,7 +35,7 @@ gTTS==2.5.4
 pydub==0.25.1
 
 # --- OCR / PDF Processing ---
-numpy==1.23.5
+numpy>=1.25,<2.0
 opencv-python-headless==4.6.0.66
 paddlepaddle==2.6.2
 paddleocr==2.7.0.3
