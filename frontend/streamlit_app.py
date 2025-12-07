@@ -19,7 +19,7 @@ from audio_recorder_streamlit import audio_recorder
 
 # ---------------- CONFIG ----------------
 #BACKEND_BASE = "http://localhost:8000"  # change if needed
-BACKEND_BASE = "http://backend:8000"
+BACKEND_BASE = "http://ec2-65-0-45-0.ap-south-1.compute.amazonaws.com:8000"
 BACKEND_STATIC_DIR = os.path.abspath("../backend/app/static/graph")
 WORKFLOW_LOCAL_PATH = os.path.join(BACKEND_STATIC_DIR, "langgraph_workflow.png")
 
