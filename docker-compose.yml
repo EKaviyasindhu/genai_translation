@@ -8,8 +8,8 @@ services:
     container_name: translation-backend
     ports:
       - "8000:8000"
-    environment:
-      - MONGO_URI=${MONGO_URI}
+    env_file:
+      - .env
     restart: always
 
   frontend:
