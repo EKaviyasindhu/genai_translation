@@ -13,9 +13,6 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# 1️⃣ Install correct NumPy BEFORE Torch & other packages
-RUN pip install --no-cache-dir numpy==1.23.5
-
 # 2️⃣ Install CPU Torch (compatible with numpy 1.x)
 RUN pip install --no-cache-dir \
     torch==2.1.0+cpu \
