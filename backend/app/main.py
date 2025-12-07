@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .routers import translate_router
 from fastapi.staticfiles import StaticFiles
-from backend.app.ai_engine.generate_workflow_png import generate_workflow_png
+from app.ai_engine.generate_workflow_png import generate_workflow_png
 from contextlib import asynccontextmanager
 import uvicorn
 
