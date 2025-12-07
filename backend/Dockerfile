@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     libxrender1 \
     ffmpeg \
     libx11-6 \
+    graphviz \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
