@@ -17,6 +17,10 @@ import requests
 import streamlit as st
 from audio_recorder_streamlit import audio_recorder
 
+import requests
+from PIL import Image
+from io import BytesIO
+
 # ---------------- CONFIG ----------------
 #BACKEND_BASE = "http://localhost:8000"  # change if needed
 BACKEND_BASE = "http://ec2-3-111-31-120.ap-south-1.compute.amazonaws.com:8000"
@@ -494,8 +498,15 @@ with right_col:
 
     with st.expander("📌 Workflow Visualization", expanded=False):
         backend_image_url = f"{BACKEND_BASE}/static/graph/langgraph_workflow.png"
+
         try:
-            st.image(backend_image_url, use_container_width=True)
+            response = requests.get(backend_image_url, timeout=5)
+
+            if response.status_code == 200:
+                img = Image.open(BytesIO(response.content))
+                st.image(img, use_container_width=True)
+            else:
+                st.info("Workflow image not found on backend.")
         except Exception:
             st.info("Workflow image not found.")
 
