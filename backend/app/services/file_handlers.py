@@ -74,8 +74,11 @@ except Exception:
             return "unknown"
 
 
-OUTPUT_JSON_DIR = "static/json"
-OUTPUT_AUDIO_DIR = "static/audio"
+#OUTPUT_JSON_DIR = "static/json"
+#OUTPUT_AUDIO_DIR = "static/audio"
+
+OUTPUT_JSON_DIR = "app/static/json"
+OUTPUT_AUDIO_DIR = "app/static/audio"
 
 os.makedirs(OUTPUT_JSON_DIR, exist_ok=True)
 os.makedirs(OUTPUT_AUDIO_DIR, exist_ok=True)
@@ -96,7 +99,8 @@ def _save_json(data: dict, prefix: str = "result") -> str:
     path = os.path.join(OUTPUT_JSON_DIR, fname)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    return path
+    #return path
+    return "/" + path.replace("\\", "/")   # Convert path → URL format
 
 
 def get_audio_duration(file_path: str) -> float:

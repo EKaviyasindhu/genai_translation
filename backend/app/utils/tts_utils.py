@@ -164,7 +164,7 @@ def _make_safe_filename(text: str, lang: str, ext: str = DEFAULT_TTS_EXT) -> str
 def save_tts(
     text: str,
     lang: str = "en",
-    out_dir: str = "static/audio"
+    out_dir: str = "app/static/audio"
 ) -> str:
     """
     Generate TTS audio with gTTS and save to disk.
@@ -198,4 +198,4 @@ def save_tts(
         logger.exception("TTS generation failed for lang='%s'", lang)
         raise RuntimeError(f"TTS generation failed for lang='{lang}': {e}")
 
-    return full_path
+    return "/" + full_path.replace("\\", "/")
