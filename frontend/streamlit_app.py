@@ -23,7 +23,7 @@ from io import BytesIO
 
 # ---------------- CONFIG ----------------
 #BACKEND_BASE = "http://localhost:8000"  # change if needed
-BACKEND_BASE = "http://ec2-3-111-31-120.ap-south-1.compute.amazonaws.com:8000"
+BACKEND_BASE = "http://ec2-13-126-132-148.ap-south-1.compute.amazonaws.com:8000"
 BACKEND_STATIC_DIR = os.path.abspath("../backend/app/static/graph")
 WORKFLOW_LOCAL_PATH = os.path.join(BACKEND_STATIC_DIR, "langgraph_workflow.png")
 
