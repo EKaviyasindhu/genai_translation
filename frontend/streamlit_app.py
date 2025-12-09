@@ -22,10 +22,11 @@ from PIL import Image
 from io import BytesIO
 
 # ---------------- CONFIG ----------------
-#BACKEND_BASE = "http://localhost:8000"  # change if needed
 BACKEND_BASE = "http://ec2-13-126-132-148.ap-south-1.compute.amazonaws.com:8000"
-BACKEND_STATIC_DIR = os.path.abspath("../backend/app/static/graph")
-WORKFLOW_LOCAL_PATH = os.path.join(BACKEND_STATIC_DIR, "langgraph_workflow.png")
+
+#BACKEND_BASE = "http://localhost:8000"  # change if needed
+#BACKEND_STATIC_DIR = os.path.abspath("../backend/app/static/graph")
+#WORKFLOW_LOCAL_PATH = os.path.join(BACKEND_STATIC_DIR, "langgraph_workflow.png")
 
 st.set_page_config(page_title="Translation Chat", layout="wide", page_icon="💬")
 
@@ -120,21 +121,30 @@ def _best_text_from_result(r: dict) -> str:
     )
 
 
+# def _audio_url_for(path: str) -> str:
+#     # backend stores path under static/..., it might return relative path or absolute. Ensure proper quoting.
+#     if not path:
+#         return None
+#     if path.startswith("http://") or path.startswith("https://"):
+#         return path
+#     return f"{BACKEND_BASE}/{urllib.parse.quote(path)}"
+
 def _audio_url_for(path: str) -> str:
-    # backend stores path under static/..., it might return relative path or absolute. Ensure proper quoting.
     if not path:
         return None
-    if path.startswith("http://") or path.startswith("https://"):
-        return path
-    return f"{BACKEND_BASE}/{urllib.parse.quote(path)}"
+    p = path.lstrip("/")  # remove leading slash if exists
+    return f"{BACKEND_BASE}/{p}"
 
 
 def _json_url_for(path: str) -> str:
     if not path:
         return None
-    if path.startswith("http://") or path.startswith("https://"):
-        return path
-    return f"{BACKEND_BASE}/{urllib.parse.quote(path)}"
+    
+    p = path.lstrip("/")
+    return f"{BACKEND_BASE}/{p}"
+    # if path.startswith("http://") or path.startswith("https://"):
+    #     return path
+    # return f"{BACKEND_BASE}/{urllib.parse.quote(path)}"
 
 
 # ---------------- Backend interaction helpers ----------------
@@ -483,18 +493,6 @@ with right_col:
         st.session_state["active_user"] = "B" if st.session_state["active_user"] == "A" else "A"
 
     st.write("Active user:", st.session_state["active_user"])
-
-    # with st.expander("📌 Workflow Visualization", expanded=False):
-    #     static_graph_path = os.path.join("static", "graph", "langgraph_workflow.png")
-    #     if os.path.exists(static_graph_path):
-    #         st.image(static_graph_path, use_container_width=True)
-    #     elif os.path.exists(WORKFLOW_LOCAL_PATH):
-    #         try:
-    #             st.image(WORKFLOW_LOCAL_PATH, use_container_width=True)
-    #         except:
-    #             st.info(f"Workflow image at {WORKFLOW_LOCAL_PATH} could not be loaded.")
-    #     else:
-    #         st.info("Workflow image not found.")
 
     with st.expander("📌 Workflow Visualization", expanded=False):
         backend_image_url = f"{BACKEND_BASE}/static/graph/langgraph_workflow.png"
