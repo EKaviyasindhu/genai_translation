@@ -480,28 +480,30 @@ with right_col:
 
     st.write("Active user:", st.session_state["active_user"])
 
+    # with st.expander("📌 Workflow Visualization", expanded=False):
+    #     static_graph_path = os.path.join("static", "graph", "langgraph_workflow.png")
+    #     if os.path.exists(static_graph_path):
+    #         st.image(static_graph_path, use_container_width=True)
+    #     elif os.path.exists(WORKFLOW_LOCAL_PATH):
+    #         try:
+    #             st.image(WORKFLOW_LOCAL_PATH, use_container_width=True)
+    #         except:
+    #             st.info(f"Workflow image at {WORKFLOW_LOCAL_PATH} could not be loaded.")
+    #     else:
+    #         st.info("Workflow image not found.")
+
     with st.expander("📌 Workflow Visualization", expanded=False):
-        static_graph_path = os.path.join("static", "graph", "langgraph_workflow.png")
-        if os.path.exists(static_graph_path):
-            st.image(static_graph_path, use_container_width=True)
-        elif os.path.exists(WORKFLOW_LOCAL_PATH):
-            try:
-                st.image(WORKFLOW_LOCAL_PATH, use_container_width=True)
-            except:
-                st.info(f"Workflow image at {WORKFLOW_LOCAL_PATH} could not be loaded.")
-        else:
+        backend_image_url = f"{BACKEND_BASE}/static/graph/langgraph_workflow.png"
+        try:
+            st.image(backend_image_url, use_container_width=True)
+        except Exception:
             st.info("Workflow image not found.")
 
     if apply_btn:
         s["translate"] = translate_enabled
         s["target_lang"] = lang_options[selected_label]
         s["output_pref"] = "audio" if output_choice == "Only Audio" else "text" if output_choice == "Only Text" else "both"
-        # sync original actions checkboxes
-        # s["original_actions"] = {
-        #     "text_to_audio": st.session_state.get("orig_t2a", False),
-        #     "audio_to_text": st.session_state.get("orig_a2t", False),
-        #     "generate_summary": st.session_state.get("orig_sum", False),
-        # }
+        
         st.success("Settings applied ✔")
 
 # ---------------- Left column: Chat + Input ----------------
