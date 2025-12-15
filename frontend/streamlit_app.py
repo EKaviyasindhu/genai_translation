@@ -120,31 +120,32 @@ def _best_text_from_result(r: dict) -> str:
         or ""
     )
 
-
-# def _audio_url_for(path: str) -> str:
-#     # backend stores path under static/..., it might return relative path or absolute. Ensure proper quoting.
-#     if not path:
-#         return None
-#     if path.startswith("http://") or path.startswith("https://"):
-#         return path
-#     return f"{BACKEND_BASE}/{urllib.parse.quote(path)}"
-
 def _audio_url_for(path: str) -> str:
     if not path:
         return None
-    p = path.lstrip("/")  # remove leading slash if exists
-    return f"{BACKEND_BASE}/{p}"
+
+    # Normalize wrong backend paths
+    if path.startswith("/app/static/"):
+        path = path.replace("/app/static/", "/static/")
+
+    if path.startswith("/static/"):
+        return f"{BACKEND_BASE}{path}"
+
+    return f"{BACKEND_BASE}/static/audio/{os.path.basename(path)}"
 
 
 def _json_url_for(path: str) -> str:
     if not path:
         return None
-    
-    p = path.lstrip("/")
-    return f"{BACKEND_BASE}/{p}"
-    # if path.startswith("http://") or path.startswith("https://"):
-    #     return path
-    # return f"{BACKEND_BASE}/{urllib.parse.quote(path)}"
+
+    # Normalize wrong backend paths
+    if path.startswith("/app/static/"):
+        path = path.replace("/app/static/", "/static/")
+
+    if path.startswith("/static/"):
+        return f"{BACKEND_BASE}{path}"
+
+    return f"{BACKEND_BASE}/static/json/{os.path.basename(path)}"
 
 
 # ---------------- Backend interaction helpers ----------------
