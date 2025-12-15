@@ -495,19 +495,26 @@ with right_col:
 
     st.write("Active user:", st.session_state["active_user"])
 
+    # with st.expander("📌 Workflow Visualization", expanded=False):
+    #     backend_image_url = f"{BACKEND_BASE}/static/graph/langgraph_workflow.png"
+
+    #     try:
+    #         response = requests.get(backend_image_url, timeout=5)
+
+    #         if response.status_code == 200:
+    #             img = Image.open(BytesIO(response.content))
+    #             st.image(img, use_container_width=True)
+    #         else:
+    #             st.info("Workflow image not found on backend.")
+    #     except Exception:
+    #         st.info("Workflow image not found.")
+
     with st.expander("📌 Workflow Visualization", expanded=False):
-        backend_image_url = f"{BACKEND_BASE}/static/graph/langgraph_workflow.png"
-
-        try:
-            response = requests.get(backend_image_url, timeout=5)
-
-            if response.status_code == 200:
-                img = Image.open(BytesIO(response.content))
-                st.image(img, use_container_width=True)
-            else:
-                st.info("Workflow image not found on backend.")
-        except Exception:
-            st.info("Workflow image not found.")
+        st.image(
+            f"{BACKEND_BASE}/static/graph/langgraph_workflow.png",
+            use_container_width=True,
+            caption="LangGraph Workflow"
+        )
 
     if apply_btn:
         s["translate"] = translate_enabled
